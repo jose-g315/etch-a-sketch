@@ -23,11 +23,18 @@ function createGrid(size){
 // 16x16 grid created as default
 createGrid(16);
 
+function createRandomColor(){
+    let r = Math.random() * (256 - 0) + 0;
+    let g = Math.random() * (256 - 0) + 0;
+    let b = Math.random() * (256 - 0) + 0;
+    let rgb = "rgb("+r+","+g+","+b+")";
+    return rgb;
+}
 // event listener wrapped in a function that add the hover class to each tile
 function activatePen(){
     const tiles = document.querySelectorAll(".tile");
     tiles.forEach(tile => tile.addEventListener("mouseover", ()=> {
-    tile.classList.add("hover");
+    tile.style.background = createRandomColor();
     }));
 }
 
@@ -55,7 +62,6 @@ newGridButton.addEventListener("click", () => {
 const resetButton = document.querySelector(".resetButton");
 resetButton.addEventListener("click", () => {
     const tiles = document.querySelectorAll(".tile");
-    // removing hover class which makes the tiles white again
-    tiles.forEach(tile => tile.classList.remove("hover"));
+    tiles.forEach(tile => tile.style.background = "whitesmoke");
     activatePen();
 });
