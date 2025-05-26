@@ -2,7 +2,7 @@
 //etch-a-sketch game logic and DOM manipulation
 
 function createGrid(size){
-    const container = document.querySelector(".sketchPad");
+    const container = document.querySelector(".sketch-pad");
     const rowDiv = [];
     const tileDiv = [];
     // creating grid based on size input
